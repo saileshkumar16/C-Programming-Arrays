@@ -24,3 +24,4 @@ int main()
         
         printf(" %d %d\n",arr[i],count);
     }
+}
