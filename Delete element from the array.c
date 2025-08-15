@@ -1,24 +1,33 @@
 #include <stdio.h>
 
-int main()
+int main() 
 {
-    int arr[] = {10, 20, 30, 40, 50};
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    int pos = 2; 
-
-   
-    for (int i = pos; i < n - 1; i++) 
+    int arr[] = {1,20,5,78,30};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    
+    int ele = 5;
+    
+    int index = 0;
+    for(int i=0; i<n; i++)
     {
-        arr[i] = arr[i + 1];
+        if(arr[i]==ele)
+        {
+            index = i;
+            break;
+        }
     }
-
-    n--; // reduce array size
-
-    // Print updated array
-    for (int i = 0; i < n; i++) 
+    
+    for(int i = index; i<n-1; i++)
     {
-        printf("%d ", arr[i]);
+        arr[i] = arr[i+1];
+    }
+    
+    n--;
+
+    
+    for(int i=0; i<n; i++)
+    {
+        printf("%d ",arr[i]);
     }
 
     return 0;
