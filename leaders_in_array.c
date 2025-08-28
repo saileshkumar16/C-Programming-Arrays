@@ -11,18 +11,18 @@ int main()
     
     for(int i=0; i<n; i++)
     {
-        int flag = 1;
+        int leader = 1;
         for(int j=i+1; j<n; j++)
         {
-            if(arr[i]<arr[j])
+            if(arr[j]>arr[i]) // if any element on the right is greater then                   simply we can say current element is not leader
             {
-                flag = 0;
+                leader = 0;
                  break;
             }
             
         }
         
-        if(flag==1)
+        if(leader==1)
         {
             arr[k] = arr[i];
             k++;
