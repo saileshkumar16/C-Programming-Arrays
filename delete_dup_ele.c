@@ -2,35 +2,31 @@
 
 int main()
 {
-    int arr[100] = {10, 20,20, 20,30};
-    int n = 4;
+    int arr[] = {3, 6, 3, 12, 1, 5, 3, 8};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    for (int i = 0; i < n; i++)
+    // Iterate through the array
+    for(int i = 0; i < n; i++)
     {
-        for (int j = i + 1; j < n; )
+        // Check for duplicate from the next ele onwards
+        for(int j = i + 1; j < n; j++)
         {
-            if (arr[i] == arr[j])
+            if(arr[i] == arr[j])
             {
-                // Shift elements left to delete duplicate
-                for (int k = j; k < n - 1; k++)
+                // Shift element
+                for(int k = j; k < n - 1; k++)
                 {
                     arr[k] = arr[k + 1];
                 }
-                n--;  // Decrease size after deletion
-                     // Don't increment j, because new element at j needs to be checked(because new element can also be a duplicate)
-            }
-            else
-            {
-                j++;  // Only increment if no deletion means unique elemts
+                n--;    // Reduce size
+                j--;    // decrement the index and check if current index is again duplicate or not
             }
         }
     }
 
-    // Print final array
-    for (int i = 0; i < n; i++)
-    {
+    
+    for(int i = 0; i < n; i++)
         printf("%d ", arr[i]);
-    }
 
     return 0;
 }
